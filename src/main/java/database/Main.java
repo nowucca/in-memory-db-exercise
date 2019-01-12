@@ -1,7 +1,7 @@
+package database;
+
 import command.Command;
 import command.CommandFactory;
-import database.Database;
-import database.Result;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
