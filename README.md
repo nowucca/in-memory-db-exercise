@@ -23,10 +23,30 @@ $ open build/reports/test/index.html
 
 The in memory database has the following commands:
 
-SET [name] [value\\]
+SET \[name\] \[value\]
 * sets the name in the database to the given value
 
-GET ….
+(documentation tbd)
 
 
-...documentation tbd...
+## Example usage
+```bash
+$ (TERM=dumb && gradle -q runApp)
+>> ROLLBACK
+TRANSACTION NOT FOUND
+>> GET a
+NULL
+>> SET a foo
+>> BEGIN
+>> SET a bar
+>> COUNT foo
+0
+>> COUNT bar
+1
+>> GET a
+bar
+>> COMMIT
+>> GET a
+bar
+>> END
+```
